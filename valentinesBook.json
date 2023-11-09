@@ -1,0 +1,374 @@
+{
+	"info": {
+		"_postman_id": "926cf715-7b3a-435a-8b93-c9db5e5d6d33",
+		"name": "Valentine's Book List API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20852807",
+		"_collection_link": "https://www.postman.com/akash8811/workspace/my-workspace/collection/20852807-926cf715-7b3a-435a-8b93-c9db5e5d6d33?action=share&source=collection_link&creator=20852807"
+	},
+	"item": [
+		{
+			"name": "Status of the API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const information = {\r",
+							"    name : \"Akash\",\r",
+							"    age : 29,\r",
+							"    address : \"Kothrud - Pune\",\r",
+							"    isMarried : true,\r",
+							"    'other details' : {\r",
+							"        mobNo : 9175175678,\r",
+							"        bloodGroup : \"O+ve\",\r",
+							"        vehicleNo : \"MH-26 AQ-8811\"\r",
+							"    }\r",
+							"};\r",
+							"\r",
+							"console.log(information.name, information.age, information.address, information.isMarried, information[\"other details\"][\"vehicleNo\"]);\r",
+							"\r",
+							"let employeejson = JSON.stringify(information);\r",
+							"console.log(employeejson);\r",
+							"\r",
+							"let employeeobj = JSON.parse(employeejson);\r",
+							"console.log(employeeobj);\r",
+							"console.log(employeeobj.address);\r",
+							"\r",
+							"const add = (a,b) => a+b;\r",
+							"\r",
+							"const sub = (p, q) => q-p;\r",
+							"\r",
+							"\r",
+							"function calculate(x, y, operations){\r",
+							"    return operations(x, y);}\r",
+							"\r",
+							"console.log(calculate(10, 30, add));\r",
+							"    \r",
+							"console.log(calculate(20, 50, sub));\r",
+							"\r",
+							"\r",
+							"const studentDetails = {'name of the student' : 'Karan',\r",
+							"age : 19,\r",
+							"std : '10th',\r",
+							"isMarried : false,\r",
+							"'subjects and marks' : {\r",
+							"Maths : 80,\r",
+							"English : 95,\r",
+							"Physics : 84,\r",
+							"Chemistry : 78},\r",
+							"message : function(){\r",
+							"    console.log(\"This information is about the subjects and scores of the student \" + studentDetails['name of the student'])\r",
+							"},\r",
+							"greet :  function(){\r",
+							"    console.log(\"Good evening \" + this[\"name of the student\"]);\r",
+							"}};\r",
+							"\r",
+							"console.log(studentDetails.isMarried, studentDetails['subjects and marks'])\r",
+							"studentDetails.message();\r",
+							"studentDetails.greet();"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://valentines-book-list.glitch.me/status",
+					"protocol": "https",
+					"host": [
+						"valentines-book-list",
+						"glitch",
+						"me"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Book List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// var firstName = 'Akash';\r",
+							"// var firstName = 'Ramesh'\r",
+							"// let age = 29;\r",
+							"// let isMarried = true;\r",
+							"\r",
+							"// console.log(firstName);\r",
+							"// console.log(firstName);\r",
+							"// console.log(age);\r",
+							"// console.log(isMarried);\r",
+							"\r",
+							"// function intro(firstName){\r",
+							"//     console.log(`My name is ${firstName}`);\r",
+							"// }\r",
+							"// intro(\"Akash\");\r",
+							"\r",
+							"function cookMaggie(maggie, water, pan){\r",
+							"   console.log(\"Maggie will be ready in \" + maggie*2 + \" minutes with \" + water + \" cups water and in a \" +pan+ \" pan \"  );\r",
+							"}\r",
+							"cookMaggie(2, 2, 1);\r",
+							"\r",
+							"function addThreeNumbers(number1, number2, number3){\r",
+							"    \r",
+							"    let result = number1 + number2 + number3;\r",
+							"    return result;\r",
+							"}\r",
+							"\r",
+							"// let result = addThreeNumbers(2, 3, 4);\r",
+							"// console.log(result);\r",
+							"\r",
+							"console.log(addThreeNumbers(5,5,5));\r",
+							"\r",
+							"function sucessfulLoginMessage(userName){\r",
+							"console.log(`${userName} is just logged in sucessfully`)\r",
+							"}\r",
+							"\r",
+							"sucessfulLoginMessage('Akash');\r",
+							"\r",
+							"\r",
+							"function userLoginMessage(userFirstName){\r",
+							"    return `${userFirstName} is just logged into the system`\r",
+							"}\r",
+							"\r",
+							"// let message = userLoginMessage('Ravikumar');\r",
+							"// console.log(message);\r",
+							"\r",
+							"console.log(userLoginMessage('Vikas'));\r",
+							"\r",
+							"let addTwoNumbers = (no1, no2) => {\r",
+							"    let sum = no1 + no2;\r",
+							"    return sum;\r",
+							"}\r",
+							"\r",
+							"console.log(addTwoNumbers(2, 8));\r",
+							"\r",
+							"\r",
+							"let multiplicationOfTwoNumbers = (x, y) => (x*y);\r",
+							"console.log(multiplicationOfTwoNumbers(3, 6));\r",
+							"\r",
+							"\r",
+							"const calculate = (a, b, operations) => {\r",
+							"    return operations(a, b);\r",
+							"}\r",
+							"\r",
+							"const addition = calculate (16, 2, function(num1, num2){\r",
+							"    return num1 + num2;\r",
+							"})\r",
+							"\r",
+							"console.log(addition);\r",
+							"\r",
+							"\r",
+							"const subtraction = (x,y) => y-x; \r",
+							"\r",
+							"console.log(calculate (10, 28, subtraction));\r",
+							"\r",
+							"\r",
+							"\r",
+							"function greet(){\r",
+							"    console.log(\"Good Evening\");\r",
+							"}\r",
+							"\r",
+							"greet();\r",
+							"\r",
+							"\r",
+							"const multiplication = (p, q) => p*q;\r",
+							"\r",
+							"console.log(multiplication(5, 8))\r",
+							"\r",
+							"\r",
+							"const calculator = (r, s, result) => {\r",
+							"    return result(r, s);\r",
+							"}\r",
+							"const division = calculate (9, 3, function (numberA, numberB){\r",
+							"   return numberA/numberB;\r",
+							"});\r",
+							"\r",
+							"console.log(division);\r",
+							"\r",
+							"const subAddition = (k, l) => k+l;\r",
+							"\r",
+							"console.log(calculator (9, 6, subAddition));\r",
+							"\r",
+							"function sum(m, q, callback){\r",
+							"    console.log(m + q);\r",
+							"    callback();\r",
+							"}\r",
+							"\r",
+							"function sayHello(){\r",
+							"    console.log(\"Hello all\")\r",
+							"}\r",
+							"\r",
+							"console.log(sum(7, 3, sayHello));\r",
+							"\r",
+							"let respObj = pm.response.json();\r",
+							"console.log(respObj);\r",
+							"console.log(respObj.results);\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{api-key}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api-key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/books/lists?list=non-fiction&page=3",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"books",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "list",
+							"value": "non-fiction"
+						},
+						{
+							"key": "page",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const vehicleInformation = {\r",
+							"    name : \"Kia Sonet\",\r",
+							"    model : 2023,\r",
+							"    isOk : true,\r",
+							"    price : 1300000,\r",
+							"    details : function(){\r",
+							"        console.log('name' + \"is one of the most great compact SUV with just\"  + 'price');\r",
+							"    }\r",
+							"}\r",
+							"console.log(vehicleInformation.name);\r",
+							"\r",
+							"let vehicleinformationObj = JSON.stringify(vehicleInformation);\r",
+							"console.log(vehicleinformationObj);\r",
+							"\r",
+							"let vehicleinformationJson = JSON.parse(vehicleinformationObj);\r",
+							"console.log(vehicleinformationJson);\r",
+							"\r",
+							"console.log(vehicleinformationJson.isOk);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "jwt_token=eyJhbGciOiAiSFMyNTYiLCJ0eXAiOiAiSldUIn0=.eyJpc3MiIDogImV3cEJPcGZLYU9zaHoxVXJSZnlGODNvT3pTeFFOUExsIiAsICJkYXRhIjogIjVmODQxYjc1NGJhZmQ5MjM3ZjAwNmM2MiIsImRhdGFfcGFyYW0iOiAiNTEzIiwicmFuIjoiZjdjYjhhZjdhNzg0OTMxYTY1NjU5ZjM1YTM2MmRmYmVhYWRjMDIzMSIsInJhbmRvbSI6Ijg5ZTFkN2ZiMjc0MmQwOGVhNTVmMzJiNjE1NDc0MjcwMDI1N2UzYzkifQ==.8JQ0mJkut59EZ6x40J6DNQjzHwiomYWak+lbMxXXPZg=",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\"forms\":{\"primary_form\":{\"formId\":\"6e86ddd7c69ea87eb152b9t9\",\"formData\":{\"patrol_template_name\":\"Test+2\",\"facility\":[{\"id\":\"eyJpdiI6ImFHOVVObmRxV0ZJMVNVRmllV3RQUWc9PSIsInZhbHVlIjoiT1lLQkpaS2plQ3EzOXlxSUZlbTE2Zz09IiwibWFjIjoiYjJlYmYxMGRiMjkwMjhhMzEzNWNmMDVmZDljYTc5MGY3NTZjOTk3MmZhNTRkNWRkMjJhMjE1NzYyMzJmOGZkMSJ9\",\"value\":\"F1+All+Pune\"}],\"facility_default_field_dropdown\":\"F1+All+Pune\",\"department\":[{\"id\":\"eyJpdiI6ImFHOVVObmRxV0ZJMVNVRmllV3RQUWc9PSIsInZhbHVlIjoieXJKaU56ZjE4OFI1MjljbmpoR1I2Zz09IiwibWFjIjoiMmIxOTgzOWVlZmZmODliNDc5NmUzMGEzYTBiNTczYmIzYzNlYzRlMDhmMTQ0YWMyOTZiMWRhZWZhMzZmNTYzOCJ9\",\"value\":\"#Flutter+2.5+Department\",\"hierarchy\":\"\"}],\"department_default_field_nested_picker\":\"#Flutter+2.5+Department\",\"patrol_template_category\":[],\"patrol_template_category_default_field_nested_picker\":\"\",\"checkpoint_order\":[{\"id\":\"Fixed\"}],\"checkpoint_order_default_field_radio_button\":\"Fixed\",\"require_scan_order\":[{\"id\":\"Yes\"}],\"require_scan_order_default_field_radio_button\":\"Yes\",\"description\":\"\",\"checkpoints\":[{\"component_id\":\"86496499\",\"id\":\"eyJpdiI6ImFHOVVObmRxV0ZJMVNVRmllV3RQUWc9PSIsInZhbHVlIjoiK0pXbzFvWHVoZkVISTduNFVkVHRnaEpaMUFKSHVOWVhTSm9mRWFrY2htaz0iLCJtYWMiOiI5YjIzYTI0NzczZjQ4MDQ2MTAwMjFiYTdhOWFmMTVkMjdmNjZiZDBjNDM1MmU1ZDUyYTU3YjVmMDIwN2E0YWMzIn0=\",\"checkpoint_name\":\"#Stand_B\",\"checklist\":[{\"uniqueId\":\"09199571\",\"item_name\":\"1+Check\"},{\"uniqueId\":\"87609860\",\"item_name\":\"2+Check\"},{\"uniqueId\":\"91130604\",\"item_name\":\"3+Check\"},{\"uniqueId\":\"19910111\",\"item_name\":\"Check+the+gate+is+cleaned\"}],\"instructions\":\"\",\"is_edited\":0,\"edit\":false}]},\"formName\":\"Patrol+Template+Summary\"}},\"token\":\"37333794\"}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://staging.247software.com/patrolTemplate/insert",
+					"protocol": "https",
+					"host": [
+						"staging",
+						"247software",
+						"com"
+					],
+					"path": [
+						"patrolTemplate",
+						"insert"
+					],
+					"query": [
+						{
+							"key": "jwt_token",
+							"value": "eyJhbGciOiAiSFMyNTYiLCJ0eXAiOiAiSldUIn0=.eyJpc3MiIDogImV3cEJPcGZLYU9zaHoxVXJSZnlGODNvT3pTeFFOUExsIiAsICJkYXRhIjogIjVmODQxYjc1NGJhZmQ5MjM3ZjAwNmM2MiIsImRhdGFfcGFyYW0iOiAiNTEzIiwicmFuIjoiZGFmYjdhMWI3Yjk3ZWUxNGFiYTg4OTQ0YWU3ODY3MTEwMTYyNTNkMSIsInJhbmRvbSI6IjY1MWQ0MmZiZjIxNzE4YTUxZjI2ZDhkYmQwYjE0ZGRmN2U3ZjNlYjAifQ==.UiaeyHx+Z9G0eInoftbhiR3J679Doat+bUJscUfo9WQ=",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "https://valentines-book-list.glitch.me",
+			"type": "string"
+		},
+		{
+			"key": "api-key",
+			"value": "8fhg93xkjd38fhg834jdfgjd"
+		}
+	]
+}
